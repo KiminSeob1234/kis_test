@@ -54,7 +54,7 @@ public class infoMB extends JPanel implements ActionListener{
 		Object obj = arg0.getSource();
 		
 		if(obj == btnOK) {
-			
+			//정보 관련 버튼 내용 추가
 		}
 	}
 
