@@ -55,6 +55,7 @@ public class infoMB extends JPanel implements ActionListener{
 		
 		if(obj == btnOK) {
 			//정보 관련 버튼 내용 추가
+			//되돌리기 만들기용 주석 !
 		}
 	}
 
