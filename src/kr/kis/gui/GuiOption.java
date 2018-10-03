@@ -7,16 +7,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-public class optionMB extends JPanel implements ActionListener {
+public class GuiOption extends JPanel implements ActionListener {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	public final String Name = "OptionMB";
 	Button btnSave, btnDel;
 	
-	optionMB(){
+	GuiOption() {
 		setLayout(new BorderLayout(10, 10));
 		
 		btnSave = new Button("DATA SAVE");

@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 import kr.kis.Enum.mSearch;
 
-public class infoMB extends JPanel implements ActionListener{
+public class GuiInfo extends JPanel implements ActionListener{
 	/**
 	 * 맴버 정보 열람 및 정보 수정.
 	 */
@@ -24,7 +24,7 @@ public class infoMB extends JPanel implements ActionListener{
 	Button btnOK;
 	Label lb1;
 	
-	infoMB(){
+	GuiInfo() {
 		setLayout( new BorderLayout(5,10) );
 		pnOption = new JPanel();
 		pnSearch = new JPanel();
@@ -55,7 +55,6 @@ public class infoMB extends JPanel implements ActionListener{
 		
 		if(obj == btnOK) {
 			//정보 관련 버튼 내용 추가
-			//되돌리기 만들기용 주석 !
 		}
 	}
 

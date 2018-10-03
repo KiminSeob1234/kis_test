@@ -32,7 +32,7 @@ public class Person {
 		this.phon = phon;
 	}
 
-	public Person(String name , String phon, int id){
+	public Person(String name , String phon, int id) {
 		this.name = name;
 		this.phon = phon;
 		this.id = id;
@@ -42,8 +42,7 @@ public class Person {
 		this.str_date = dateFormat.format(date);
 	}
 	
-	public Person(String id, String name, String phon, String date)
-	{
+	public Person(String id, String name, String phon, String date) {
 		this.name = name;
 		this.phon = phon;
 		this.id = Integer.parseInt(id);
@@ -51,13 +50,11 @@ public class Person {
 	}
 	
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "회원 번호:" +(id)+ " 이름:"+getName()+" 전화번호:"+getPhon()+" date:"+ str_date;
 	}
 	
-	String saveFormat()
-	{
+	public String saveFormat() {
 		return id+","+getName()+","+getPhon()+","+str_date;
 	}
 	//시간 포맷 예제

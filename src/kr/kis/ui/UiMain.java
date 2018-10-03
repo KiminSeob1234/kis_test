@@ -1,35 +1,31 @@
-package kr.kis.gui;
+package kr.kis.ui;
 
 import java.util.Scanner;
 
-import kr.kis.data.dataSaveCsv;
+import kr.kis.data.MemberData;
 import kr.kis.main.*;
 
-public class PersonSystem {
+public class UiMain {
 	private final int MaxPersonCount = 150;
 	
-	public void Run() 
-	{
+	public void Run() {
 		boolean run = true;
 		Scanner scan = new Scanner(System.in);
-		Listinfo listMenu = new Listinfo();
+		UiInfo listMenu = new UiInfo();
 		
-		while(run)
-		{	
+		while(run) {	
 			System.out.println("1.회원등록 2.회원정보 3.회원정보삭제 4.회원정보수정 7.정보저장 9.종료");
 			System.out.print("입력>");
 			int num = scan.nextInt();
 			
-			switch(num)
-			{
-				case 1:
-				{
+			switch(num) {
+			
+				case 1: {
 					if(Main.perlist.size() < MaxPersonCount) listMenu.newPerson();
 					else System.out.println("등록 가능 인원 Full. 등록 불가.");
 				}
 				break;
-				case 2:
-				{
+				case 2: {
 					if(Main.perlist.size() > 0)
 					{
 						listMenu.listInfo();
@@ -37,8 +33,7 @@ public class PersonSystem {
 					else System.out.println("회원 정보가 없습니다.");
 				}
 				break;
-				case 3:
-				{
+				case 3: {
 					listMenu.listInfo();
 					
 					System.out.print("삭제할 id를 입력해 주세요.>");
@@ -50,16 +45,14 @@ public class PersonSystem {
 					
 				}
 				break;
-				case 4:
-				{
+				case 4: {
 					
 				}
 				break;
-				case 7:
-				{
+				case 7: {
 					System.out.println("저장하시겠습니까? >");
 					if(scan.nextInt()== 1) {
-						dataSaveCsv save = new dataSaveCsv();
+						MemberData save = new MemberData();
 						boolean fl = save.dataSave();
 						
 						if(fl)System.out.println("저장 성공");
@@ -68,13 +61,11 @@ public class PersonSystem {
 					else System.out.println("취소.");
 				}
 				break;
-				case 9:
-				{
+				case 9: {
 					run = false;
 				}
 				break;
-				default:
-				{
+				default: {
 					System.out.println("잘못된 번호.");
 				}
 				break;

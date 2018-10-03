@@ -10,20 +10,18 @@ import java.util.Scanner;
 import kr.kis.main.Main;
 
 
-public class dataSaveCsv {
+public class MemberData {
 	private final String csvFilePath ="D:\\MemberList.csv";
-	Scanner scan = new Scanner(System.in);
 	
-	public boolean dataSave() //Csv Write
-	{	
+	//Csv Write
+	public boolean dataSave() {	
 		boolean fl = true;
 		//File dir = new File(csvFilePath); 
 		
 		try {
 			BufferedWriter fw = new BufferedWriter(new FileWriter(csvFilePath));//덮어쓰기
 			//BufferedWriter fw = new BufferedWriter(new FileWriter(csvFilePath,true));//이어쓰기
-			for(int i=0; i<Main.perlist.size(); i++)
-			{
+			for(int i=0; i<Main.perlist.size(); i++) {
 				Person temp = Main.perlist.get(i);
 				String info = temp.saveFormat();
 				fw.write(info);
@@ -31,9 +29,8 @@ public class dataSaveCsv {
 			}
 			fw.flush();
 			fw.close();
-			
 		}
-		catch(Exception e){
+		catch(Exception e) {
 			fl = false;
 			System.out.println(e);
 		}
@@ -42,8 +39,8 @@ public class dataSaveCsv {
 		
 	}
 	
-	public void dataRead() // Csv Read
-	{	
+	// Csv Read
+	public void dataRead() {	
 		File dir = new File(csvFilePath); 
 		if(dir.isFile()) {
 			String readLine;
@@ -57,7 +54,7 @@ public class dataSaveCsv {
 				}
 				rw.close();
 			}
-			catch(Exception e){
+			catch(Exception e) {
 				System.out.println(e);
 			}
 		}

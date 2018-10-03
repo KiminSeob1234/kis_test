@@ -1,10 +1,11 @@
-package kr.kis.main;
+package kr.kis.ui;
 
 import java.util.Scanner;
 
 import kr.kis.data.Person;
+import kr.kis.main.Main;
 
-public class Listinfo {
+public class UiInfo {
 	private Scanner str_scan = new Scanner(System.in);
 	
 	public void newPerson(String name, String phon) {
@@ -14,7 +15,7 @@ public class Listinfo {
 		Main.perlist.add(temp);
 	}
 	
-	//신규 등록
+	//member Create
 	public void newPerson() {
 
 		System.out.print("이름:");
@@ -26,7 +27,8 @@ public class Listinfo {
 		Person temp = new Person(name, phon, id);
 		Main.perlist.add(temp);
 	}
-	//신규 등록 회원 번호 획득
+	
+	//Get Member Id
 	public int getNewPersonId() {
 		int id = 0;
 		boolean Ok = true;
@@ -47,7 +49,8 @@ public class Listinfo {
 		System.out.println("고객 신규 아이디 :" + id);
 		return id;
 	}
-	//회원 삭제
+	
+	//Delete Member
 	public boolean delPerson(int id) {
 		boolean Ok = false;
 		boolean del = false;
@@ -71,7 +74,8 @@ public class Listinfo {
 		
 		return Ok;
 	}
-	//회원 정보 출력
+	
+	//Output MemberList
 	public void listInfo() { 
 		
 		for(int i=0; i<Main.perlist.size(); i++){

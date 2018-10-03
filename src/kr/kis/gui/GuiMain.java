@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class MainMB extends JFrame implements ActionListener{
+public class GuiMain extends JFrame implements ActionListener{
 	/**
 	 * 180906 전체적인 System UI 표시 GUI 메인격.
 	 * 1.회원등록 2.회원정보 3.회원정보삭제 4.회원정보수정 7.정보저장 9.종료
@@ -18,22 +18,20 @@ public class MainMB extends JFrame implements ActionListener{
 	public static Label lbLog = new Label("Log");
 	JPanel pnAll, pnMenu,pnTitle;
 	JTabbedPane tpTab;
-	newMB nMB;
-	infoMB iMB;
-	optionMB oMB;
+	GuiAddMember nMB;
+	GuiInfo iMB;
+	GuiOption oMB;
 	Label lbTitle;
 	
-	
-	
-	public MainMB(){
+	public GuiMain() {
 		
 		super(Name);
 		this.setSize(400,400);
 		//setLayout(new BorderLayout(30,10));
 		
-		nMB = new newMB();
-		iMB = new infoMB();
-		oMB = new optionMB();
+		nMB = new GuiAddMember();
+		iMB = new GuiInfo();
+		oMB = new GuiOption();
 		pnTitle = new JPanel();
 		pnMenu = new JPanel();
 		pnAll = new JPanel();

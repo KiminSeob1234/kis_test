@@ -15,9 +15,9 @@ import javax.swing.JTextField;
 import javax.swing.Timer;
 
 import kr.kis.Enum.DiaOK;
-import kr.kis.main.Listinfo;
+import kr.kis.ui.UiInfo;
 
-public class newMB extends JPanel implements ActionListener{
+public class GuiAddMember extends JPanel implements ActionListener{
 	/**
 	 * 181906 새로운 인원 추가.
 	 */
@@ -42,7 +42,7 @@ public class newMB extends JPanel implements ActionListener{
 		}
 	});
 	
-	newMB() {
+	GuiAddMember() {
 		boolLogin = false;
 		setLayout( new BorderLayout(10,10) );
 		btnOK = new Button("OK");
@@ -85,19 +85,19 @@ public class newMB extends JPanel implements ActionListener{
 		Object obj = arg0.getSource();
 		
 		if(obj == btnOK) {
-			MainMB.lbLog.setText(Name +" ButtonOK");
+			GuiMain.lbLog.setText(Name +" ButtonOK");
 			if(mDialog("Add Member?", "new Member Create") == DiaOK.OK) {
-				Listinfo list = new Listinfo();
+				UiInfo list = new UiInfo();
 				list.newPerson(tfName.getText(), tfPhon.getText());
-				MainMB.lbLog.setText(Name +" Member Add OK");
+				GuiMain.lbLog.setText(Name +" Member Add OK");
 			}
-			else MainMB.lbLog.setText(Name +" Member Add CANCEL");
+			else GuiMain.lbLog.setText(Name +" Member Add CANCEL");
 		}
 		else if(obj == btnLogin) {
 			
 			if(boolLogin) boolLogin = false;
 			else boolLogin = true;
-			MainMB.lbLog.setText(Name +" ButtonLogin State:"+boolLogin);
+			GuiMain.lbLog.setText(Name +" ButtonLogin State:"+boolLogin);
 		}
 		
 	}
